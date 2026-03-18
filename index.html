@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Free Dev Tools & Playground — 80+ Curated Developer Resources</title>
+<meta name="description" content="80+ curated free developer tools, libraries & live code playgrounds. JS editor, API tester, Regex tester, JSON formatter — all in one place.">
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0d1117">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Offline Indicator -->
+<div class="offline-banner" id="offlineBanner">Offline Mode</div>
+
+<!-- ═══════════ HEADER / NAV ═══════════ -->
+<header class="site-header" id="top">
+  <nav class="nav-inner">
+    <a href="#top" class="logo" aria-label="Dev Tools Playground Home">
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect x="2" y="2" width="28" height="28" rx="6" stroke="currentColor" stroke-width="2"/>
+        <path d="M9 12l5 4-5 4" stroke="#58a6ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="17" y1="20" x2="23" y2="20" stroke="#3fb950" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text">DevTools<span class="logo-accent">.play</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#playground">Playground</a>
+      <a href="#tools">Tools</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ═══════════ HERO SECTION ═══════════ -->
+<section class="hero" id="hero">
+  <div class="hero-particles" id="heroParticles" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-terminal" aria-hidden="true">
+      <div class="terminal-bar">
+        <span class="terminal-dot red"></span>
+        <span class="terminal-dot yellow"></span>
+        <span class="terminal-dot green"></span>
+        <span class="terminal-title">devtools — bash</span>
+      </div>
+      <div class="terminal-body">
+        <div class="terminal-line" id="termLine1"></div>
+        <div class="terminal-line" id="termLine2"></div>
+        <div class="terminal-line" id="termLine3"></div>
+        <div class="terminal-line" id="termLine4"></div>
+      </div>
+    </div>
+    <h1 class="hero-title">
+      Free Dev Tools<br><span class="hero-amp">&</span> <span class="glow-text">Playground</span>
+    </h1>
+    <p class="hero-subtitle">80+ curated free tools, libraries & live code playgrounds for developers</p>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">80+</span><span class="stat-label">Tools</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">12</span><span class="stat-label">Categories</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Free</span></div>
+    </div>
+    <div class="hero-search-wrap">
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="search" id="heroSearch" class="hero-search" placeholder="Search tools, categories, tags..." autocomplete="off" aria-label="Search developer tools">
+      <kbd class="search-kbd">/</kbd>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PLAYGROUND SECTION ═══════════ -->
+<section class="playground-section" id="playground">
+  <div class="section-container">
+    <div class="section-header">
+      <h2 class="section-title"><span class="title-hash">#</span> Interactive Playground</h2>
+      <p class="section-desc">Live code editors, API testing, regex matching, and JSON formatting — right in your browser.</p>
+    </div>
+
+    <div class="playground-tabs" role="tablist">
+      <button class="pg-tab active" role="tab" aria-selected="true" data-pg-tab="editor" id="tab-editor" aria-controls="panel-editor">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        JS / HTML / CSS
+      </button>
+      <button class="pg-tab" role="tab" aria-selected="false" data-pg-tab="api" id="tab-api" aria-controls="panel-api">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        API Tester
+      </button>
+      <button class="pg-tab" role="tab" aria-selected="false" data-pg-tab="regex" id="tab-regex" aria-controls="panel-regex">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        Regex Tester
+      </button>
+      <button class="pg-tab" role="tab" aria-selected="false" data-pg-tab="json" id="tab-json" aria-controls="panel-json">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        JSON Formatter
+      </button>
+    </div>
+
+    <!-- JS/HTML/CSS Editor Panel -->
+    <div class="pg-panel active" id="panel-editor" role="tabpanel" aria-labelledby="tab-editor">
+      <div class="editor-toolbar">
+        <div class="editor-lang-tabs">
+          <button class="lang-tab active" data-lang="html">HTML</button>
+          <button class="lang-tab" data-lang="css">CSS</button>
+          <button class="lang-tab" data-lang="javascript">JS</button>
+        </div>
+        <button class="btn-run" id="btnRun">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Run
+        </button>
+      </div>
+      <div class="editor-split">
+        <div class="editor-pane">
+          <div id="monacoEditor" class="code-editor-wrap"></div>
+        </div>
+        <div class="preview-pane">
+          <div class="preview-bar">
+            <span class="preview-label">Preview</span>
+          </div>
+          <iframe id="previewFrame" class="preview-iframe" sandbox="allow-scripts allow-modals" title="Live preview"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- API Tester Panel -->
+    <div class="pg-panel" id="panel-api" role="tabpanel" aria-labelledby="tab-api">
+      <div class="api-top-row">
+        <select id="apiMethod" class="api-method" aria-label="HTTP method">
+          <option value="GET">GET</option>
+          <option value="POST">POST</option>
+          <option value="PUT">PUT</option>
+          <option value="DELETE">DELETE</option>
+          <option value="PATCH">PATCH</option>
+        </select>
+        <input type="url" id="apiUrl" class="api-url" placeholder="https://jsonplaceholder.typicode.com/posts/1" value="https://jsonplaceholder.typicode.com/posts/1" aria-label="Request URL">
+        <button class="btn-send" id="btnSend">Send</button>
+      </div>
+      <div class="api-body-section">
+        <div class="api-input-group">
+          <label for="apiHeaders">Headers <span class="label-hint">(JSON format)</span></label>
+          <textarea id="apiHeaders" class="api-textarea" rows="3" placeholder='{"Content-Type": "application/json"}'></textarea>
+        </div>
+        <div class="api-input-group">
+          <label for="apiBody">Body <span class="label-hint">(for POST/PUT/PATCH)</span></label>
+          <textarea id="apiBody" class="api-textarea" rows="4" placeholder='{"title": "Hello", "body": "World"}'></textarea>
+        </div>
+      </div>
+      <div class="api-response">
+        <div class="api-response-header">
+          <span class="response-label">Response</span>
+          <span class="response-status" id="apiStatus"></span>
+          <span class="response-time" id="apiTime"></span>
+        </div>
+        <pre class="api-response-body" id="apiResponse"><code>// Click "Send" to make a request</code></pre>
+      </div>
+    </div>
+
+    <!-- Regex Tester Panel -->
+    <div class="pg-panel" id="panel-regex" role="tabpanel" aria-labelledby="tab-regex">
+      <div class="regex-inputs">
+        <div class="regex-pattern-row">
+          <span class="regex-slash">/</span>
+          <input type="text" id="regexPattern" class="regex-input" placeholder="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z]{2,}" value="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z]{2,}" aria-label="Regular expression pattern">
+          <span class="regex-slash">/</span>
+          <div class="regex-flags">
+            <label class="flag-label"><input type="checkbox" id="flagG" checked> g</label>
+            <label class="flag-label"><input type="checkbox" id="flagI" checked> i</label>
+            <label class="flag-label"><input type="checkbox" id="flagM"> m</label>
+          </div>
+        </div>
+        <textarea id="regexTest" class="regex-test-string" rows="5" placeholder="Enter test string..." aria-label="Test string">Contact us at hello@example.com or support@devtools.io for help.
+You can also reach admin@company.org — invalid emails like @broken or test@ won't match.</textarea>
+      </div>
+      <div class="regex-results">
+        <div class="regex-results-header">
+          <span class="results-label">Matches</span>
+          <span class="match-count" id="matchCount">0 matches</span>
+        </div>
+        <div class="regex-matches" id="regexMatches"></div>
+        <div class="regex-highlighted" id="regexHighlighted"></div>
+      </div>
+    </div>
+
+    <!-- JSON Formatter Panel -->
+    <div class="pg-panel" id="panel-json" role="tabpanel" aria-labelledby="tab-json">
+      <div class="json-toolbar">
+        <button class="json-btn active" data-json-action="format">Format</button>
+        <button class="json-btn" data-json-action="minify">Minify</button>
+        <button class="json-btn" data-json-action="validate">Validate</button>
+      </div>
+      <div class="json-split">
+        <div class="json-input-wrap">
+          <label for="jsonInput" class="json-label">Input</label>
+          <textarea id="jsonInput" class="json-textarea" placeholder="Paste your JSON here...">{
+  "name": "DevTools Playground",
+  "version": "1.0.0",
+  "tools": 80,
+  "categories": ["AI", "Frontend", "Backend", "DevOps"],
+  "features": {
+    "editor": true,
+    "apiTester": true,
+    "regex": true,
+    "jsonFormatter": true
+  },
+  "free": true
+}</textarea>
+        </div>
+        <div class="json-output-wrap">
+          <label class="json-label">Output</label>
+          <pre class="json-output" id="jsonOutput"><code>// Click Format, Minify, or Validate</code></pre>
+          <div class="json-status" id="jsonStatus"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ TOOL DIRECTORY ═══════════ -->
+<section class="tools-section" id="tools">
+  <div class="section-container">
+    <div class="section-header">
+      <h2 class="section-title"><span class="title-hash">#</span> Tool Directory</h2>
+      <p class="section-desc">80+ hand-picked free developer tools, libraries, and platforms — organized and searchable.</p>
+    </div>
+
+    <div class="tools-controls">
+      <div class="tools-search-wrap">
+        <svg class="search-icon-sm" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="search" id="toolsSearch" class="tools-search" placeholder="Filter tools..." autocomplete="off" aria-label="Filter tools">
+      </div>
+      <div class="bookmark-toggle-wrap">
+        <button class="bookmark-filter-btn" id="bookmarkFilter" aria-label="Show bookmarked tools">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Bookmarks
+        </button>
+      </div>
+    </div>
+
+    <div class="category-bar" id="categoryBar" role="tablist" aria-label="Filter by category">
+      <button class="cat-tab active" data-category="all" role="tab" aria-selected="true">All</button>
+      <!-- Categories rendered by JS -->
+    </div>
+
+    <div class="tools-grid" id="toolsGrid">
+      <!-- Cards rendered by JS -->
+    </div>
+
+    <div class="no-results" id="noResults" hidden>
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M8 8l6 6M14 8l-6 6"/></svg>
+      <p>No tools match your search.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect x="2" y="2" width="28" height="28" rx="6" stroke="currentColor" stroke-width="2"/>
+        <path d="M9 12l5 4-5 4" stroke="#58a6ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="17" y1="20" x2="23" y2="20" stroke="#3fb950" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span>DevTools.play &copy; 2026</span>
+    </div>
+    <div class="footer-right">
+      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/tools-data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/playground.js"></script>
+</body>
+</html>
