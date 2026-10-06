@@ -481,6 +481,14 @@ const TOOLS = [
 
   // ── DevOps & Hosting ──
   {
+    name: 'Shipvela',
+    description: 'Publish static websites from GitHub or CLI with custom domains and HTTPS; Hobby includes 3 projects and 20 publishes per month.',
+    url: 'https://shipvela.com/',
+    category: 'devops',
+    tags: ['Free Tier', 'Static Hosting', 'CLI'],
+    emoji: '🚀'
+  },
+  {
     name: 'Vercel',
     description: 'Frontend cloud platform with instant deployments and edge functions.',
     url: 'https://vercel.com/',
